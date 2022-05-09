@@ -15,9 +15,10 @@ function Category() {
     return <NoMatch />;
   }
 
-  let name = `${categ.name} ${categ.slug} ${categ.logo}`;
+  let name = `${categ.name}`;
+  let logo = `${categ.logo}`;
 
-  return <p>Category {categ.name}</p>;
+  return <p>Category {name}</p>;
 }
 
 export default Category;
