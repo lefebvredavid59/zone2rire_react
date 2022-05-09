@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import NoMatch from "../NoMatch";
 import { getCategorySlug } from "../../data/Category.ts";
-import { SUBCATEGORY, getSubCategoryByCategoryId } from "../../data/SubCategory.ts";
+import { getSubCategoryByCategoryId } from "../../data/SubCategory.ts";
 
 function Category() {
   let { slug } = useParams();
