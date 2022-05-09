@@ -1,5 +1,4 @@
 import { CATEGORY } from './Category';
-import { CONTENT } from './Content';
 
 interface SubCategory {
     id: number;
@@ -46,8 +45,4 @@ function getSubCategoryByCategoryId(categoryId: number): SubCategory[] {
     return SUBCATEGORY.filter(subCategory => subCategory.category_id === categoryId ? subCategory : null);
 };
 
-function countContentBySubCategoryId(subCategoryId: number): number {
-    return SUBCATEGORY.filter(subCategory => subCategory.id === subCategoryId).length;
-}
-
-export { SUBCATEGORY, getSubCategoryByCategoryId, countContentBySubCategoryId };
+export { SUBCATEGORY, getSubCategoryByCategoryId };
