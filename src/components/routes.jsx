@@ -3,11 +3,13 @@ import {
     BrowserRouter as Router,
     Route,
     Routes,
-    Navigate,
 } from 'react-router-dom';
+
 import Home from "../pages/Home";
+import NoMatch from "../pages/NoMatch";
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
 
@@ -20,7 +22,8 @@ const index = () => {
                     <Route path="/" exact element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/*" element={<Navigate replace to="/" />} />
+                    <Route path="/{slug}" element={<Register />} />
+                    <Route path="*" element={<NoMatch />} />
                 </Routes>
                 <Footer />
             </Router>

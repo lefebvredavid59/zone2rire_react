@@ -64,16 +64,16 @@ function Navbar() {
 
           <ul className="nav justify-content-center">
             <li className="nav-item">
-              <a href="/" className="nav-link text-dark">
-                <i className="fa-solid fa-user-circle me-2"></i>
-                Mon compte
-              </a>
+              <Link to='/register' className="nav-link text-dark">
+                <i className="fa-solid fa-user-plus me-2"></i>
+                Inscription
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="/" className="nav-link text-dark">
-                <i className="fa-solid fa-sign-out-alt me-2"></i>
-                Déconnexion
-              </a>
+              <Link to='/login' className="nav-link text-dark">
+              <i className="fa-solid fa-arrow-right-to-bracket me-2"></i>
+                            Connexion
+              </Link>
             </li>
           </ul>
         </div>
