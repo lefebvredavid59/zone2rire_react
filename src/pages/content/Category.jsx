@@ -18,7 +18,13 @@ function Category() {
   let name = `${categ.name}`;
   let logo = `${categ.logo}`;
 
-  return <p>Category {name}</p>;
+  return (
+    <div className="text-center">
+      <p>
+        <i className={`me-2 ${logo}`}></i> Category {name}
+      </p>
+    </div>
+  );
 }
 
 export default Category;
