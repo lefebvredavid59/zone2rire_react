@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../../styles/logo.png";
 
-import { CATEGORY } from "./Category.ts";
+import { CATEGORY } from "../../data/Category.ts";
 
 function Navbar() {
   const categ = CATEGORY;
