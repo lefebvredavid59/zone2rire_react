@@ -1,4 +1,5 @@
 import { CATEGORY } from './Category';
+import { CONTENT } from './Content';
 
 interface SubCategory {
     id: number;
@@ -27,10 +28,26 @@ let SUBCATEGORY: SubCategory[] = [
         name: "Choom",
         category_id: 3,
     },
+    {
+        id: 4,
+        slug: "devinette-humour-noir",
+        name: "Devinette Humour Noir",
+        category_id: 5,
+    },
+    {
+        id: 5,
+        slug: "devinette-melon-melaiche",
+        name: "Melon Melaiche",
+        category_id: 5,
+    }
 ];
 
 function getSubCategoryByCategoryId(categoryId: number): SubCategory[] {
-    return SUBCATEGORY.filter(subCategory => subCategory.category_id === categoryId);
+    return SUBCATEGORY.filter(subCategory => subCategory.category_id === categoryId ? subCategory : null);
 };
 
-export { SUBCATEGORY, getSubCategoryByCategoryId };
+function countContentBySubCategoryId(subCategoryId: number): number {
+    return SUBCATEGORY.filter(subCategory => subCategory.id === subCategoryId).length;
+}
+
+export { SUBCATEGORY, getSubCategoryByCategoryId, countContentBySubCategoryId };

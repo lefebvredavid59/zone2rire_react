@@ -2,6 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import NoMatch from "../NoMatch";
 import { getCategorySlug } from "../../data/Category.ts";
 import { getSubCategoryByCategoryId } from "../../data/SubCategory.ts";
+import { countContentBySubCategoryId } from "../../data/Content.ts";
+import Helmet from "react-helmet";
 
 function Category() {
   let { slug } = useParams();
@@ -21,6 +23,10 @@ function Category() {
 
   return (
     <div>
+      <Helmet>
+        <title>Zone 2 Rire | {name}</title>
+      </Helmet>
+
       <main>
         <section className="py-3 text-center container">
           <div className="row py-lg-3">
@@ -37,7 +43,7 @@ function Category() {
                 >
                   {subcateg.name}
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                    200
+                  {countContentBySubCategoryId(subcateg.id)}
                     <span className="visually-hidden">unread messages</span>
                   </span>
                 </Link>

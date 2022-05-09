@@ -1,7 +1,7 @@
 interface Category {
     id: number;
     slug: string;
-    name:  string;
+    name: string;
     logo: string;
     video: boolean;
     audio: boolean;
@@ -24,7 +24,7 @@ let CATEGORY: Category[] = [
         id: 2,
         slug: "video",
         name: "Video",
-        logo : "fa-solid fa-video fa-fade",
+        logo: "fa-solid fa-video fa-fade",
         video: true,
         audio: false,
         picture: false,
@@ -34,7 +34,7 @@ let CATEGORY: Category[] = [
         id: 3,
         slug: "audio",
         name: "Audio",
-        logo : "fa-solid fa-music fa-flip",
+        logo: "fa-solid fa-music fa-flip",
         video: false,
         audio: true,
         picture: false,
@@ -44,7 +44,7 @@ let CATEGORY: Category[] = [
         id: 4,
         slug: "image",
         name: "Image",
-        logo : "fa-solid fa-image fa-beat",
+        logo: "fa-solid fa-image fa-beat",
         video: false,
         audio: false,
         picture: true,
@@ -53,8 +53,8 @@ let CATEGORY: Category[] = [
     {
         id: 5,
         slug: "devinette",
-        name: "Devienette",
-        logo : "fa-solid fa-question fa-bounce",
+        name: "Devinette",
+        logo: "fa-solid fa-question fa-bounce",
         video: false,
         audio: false,
         picture: false,
@@ -66,4 +66,4 @@ function getCategorySlug(slug: string): Category {
     return CATEGORY.find((category: Category) => category.slug === slug);
 }
 
-export {CATEGORY, getCategorySlug};
+export { CATEGORY, getCategorySlug };
