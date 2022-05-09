@@ -32,7 +32,7 @@ function Footer() {
           {social.map((soc) => {
             return (
               <li className="ms-3">
-                <a href={soc.link} className="text-muted" target="_blank" rel="zone2rire">
+                <a href={soc.link} className="text-muted" target="_blank" rel="noreferrer">
                   <i className={`${soc.logo} fa-lg`}></i>
                 </a>
               </li>
