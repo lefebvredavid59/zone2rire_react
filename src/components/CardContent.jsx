@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getCategorySlug } from "../data/Category.ts";
+import {Answer} from "../styles/CardContent";
 
 function CardContent() {
   let { slug } = useParams();
@@ -121,11 +122,9 @@ function CardContent() {
               <br />
               Je suis plus gauche que le plus gauche.
             </p>
-            <div className="d-flex justify-content-center align-items-center">
-              <button className="btn btn-primary">
+            <Answer>
                 Reponse
-              </button>
-            </div>
+            </Answer>
             <div className="d-flex justify-content-between align-items-center">
               <small className="text-muted">25/02/22</small>
             </div>
