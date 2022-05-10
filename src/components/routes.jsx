@@ -24,6 +24,7 @@ const index = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/:slug" element={<Category />} />
+
                     <Route path="*" element={<NoMatch />} />
                 </Routes>
                 <Footer />

@@ -2,8 +2,8 @@ import { CATEGORY } from './Category';
 
 interface SubCategory {
     id: number;
+    name: string;
     slug: string;
-    name:  string;
 
     category_id: typeof CATEGORY;
 }
@@ -11,38 +11,52 @@ interface SubCategory {
 let SUBCATEGORY: SubCategory[] = [
     {
         id: 1,
-        slug: "toto",
         name: "Toto",
+        slug: "toto",
+
         category_id: 1,
     },
     {
         id: 2,
-        slug: "tiktok",
         name: "TikTok",
+        slug: "tiktok",
+
         category_id: 2,
     },
     {
         id: 3,
-        slug: "choom",
-        name: "Choom",
+        name: "Choum",
+        slug: "choum",
+
         category_id: 3,
     },
     {
         id: 4,
-        slug: "devinette-humour-noir",
         name: "Devinette Humour Noir",
+        slug: "devinette-humour-noir",
+
         category_id: 5,
     },
     {
         id: 5,
-        slug: "devinette-melon-melaiche",
         name: "Melon Melaiche",
+        slug: "devinette-melon-melaiche",
+
         category_id: 5,
-    }
+    },
+    {
+        id: 6,
+        name: "Repondeur",
+        slug: "repondeur",
+
+        category_id: 3,
+    },
 ];
 
 function getSubCategoryByCategoryId(categoryId: number): SubCategory[] {
+
     return SUBCATEGORY.filter(subCategory => subCategory.category_id === categoryId ? subCategory : null);
+
 };
 
 export { SUBCATEGORY, getSubCategoryByCategoryId };

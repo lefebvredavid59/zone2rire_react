@@ -38,16 +38,18 @@ function Category() {
               <p className="my-2">Catégorie disponible :</p>
               <p className="d-flex justify-content-around">
                 {getSubCategoryByCategoryId(categ.id).map((subcateg) => (
-                <Link
-                  to="/"
-                  className="badge rounded-pill bg-primary position-relative mt-2 text-decoration-none text-white"
-                >
-                  {subcateg.name}
-                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                  {countContentBySubCategoryId(subcateg.id)}
-                    <span className="visually-hidden">unread messages</span>
-                  </span>
-                </Link>
+                  <Link
+                    to="/"
+                    className="badge rounded-pill bg-primary position-relative mt-2 text-decoration-none text-white"
+                  >
+                    {subcateg.name}
+                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                      {countContentBySubCategoryId(subcateg.id)}
+                      <span className="visually-hidden">
+                        Contenue disponible
+                      </span>
+                    </span>
+                  </Link>
                 ))}
               </p>
             </div>
@@ -57,13 +59,10 @@ function Category() {
         <div className="album py-5 bg-light">
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
-             
-                <CardContent />
-
+              <CardContent />
             </div>
           </div>
         </div>
-
       </main>
     </div>
   );

@@ -24,13 +24,7 @@ function CardContent() {
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
-                  View
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-secondary"
-                >
-                  Edit
+                  Voir
                 </button>
               </div>
               <small className="text-muted">9 mins</small>
@@ -54,12 +48,12 @@ function CardContent() {
               </audio>
             </figure>
             <div className="d-flex justify-content-between align-items-center">
-              <div className="">
+              <div>
                 <button
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
-                  View
+                  Voir
                 </button>
               </div>
               <small className="text-muted">9 mins</small>
@@ -96,7 +90,7 @@ function CardContent() {
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
-                  View
+                  Voir
                 </button>
               </div>
               <small className="text-muted">25/02/22</small>
@@ -138,7 +132,7 @@ function CardContent() {
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
-                  View
+                  Voir
                 </button>
                 <button
                   type="button"
