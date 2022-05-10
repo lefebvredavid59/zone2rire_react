@@ -1,15 +1,6 @@
 import { useParams } from "react-router-dom";
 import { getCategorySlug } from "../data/Category.ts";
 
-function Reveal() {
-  var x = document.getElementById("devinette");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-
 function CardContent() {
   let { slug } = useParams();
 
