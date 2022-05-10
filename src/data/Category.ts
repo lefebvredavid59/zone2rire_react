@@ -3,6 +3,7 @@ interface Category {
     slug: string;
     name: string;
     logo: string;
+    joke: boolean;
     video: boolean;
     audio: boolean;
     picture: boolean;
@@ -15,6 +16,7 @@ let CATEGORY: Category[] = [
         slug: "blague",
         name: "Blague",
         logo: "fa-solid fa-face-grin-tongue-wink fa-spin",
+        joke: true,
         video: false,
         audio: false,
         picture: false,
@@ -25,6 +27,7 @@ let CATEGORY: Category[] = [
         slug: "video",
         name: "Video",
         logo: "fa-solid fa-video fa-fade",
+        joke: false,
         video: true,
         audio: false,
         picture: false,
@@ -35,6 +38,7 @@ let CATEGORY: Category[] = [
         slug: "audio",
         name: "Audio",
         logo: "fa-solid fa-music fa-flip",
+        joke: false,
         video: false,
         audio: true,
         picture: false,
@@ -45,6 +49,7 @@ let CATEGORY: Category[] = [
         slug: "image",
         name: "Image",
         logo: "fa-solid fa-image fa-beat",
+        joke: false,
         video: false,
         audio: false,
         picture: true,
@@ -55,6 +60,7 @@ let CATEGORY: Category[] = [
         slug: "devinette",
         name: "Devinette",
         logo: "fa-solid fa-question fa-bounce",
+        joke: false,
         video: false,
         audio: false,
         picture: false,

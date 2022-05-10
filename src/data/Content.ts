@@ -11,6 +11,8 @@ interface Content {
     devinette: string;
     reponse: string;
 
+    date_created: Date;
+
     sub_category_id: typeof SUBCATEGORY;
 }
 
@@ -25,6 +27,7 @@ let CONTENT: Content[] = [
         blague: "Dans la rue, un homme joue de la trompette. Un policier s’approche et lui dit : – Vous avez un permis pour jouer dans la rue ? Le musicien lui répond que non. – Très bien, accompagnez moi, dit le policier. – Sur quel morceau de musique ? répond le trompettiste.",
         devinette: null,
         reponse: null,
+        date_created: new Date(),
 
         sub_category_id: 1,
     },
@@ -38,6 +41,7 @@ let CONTENT: Content[] = [
         blague: null,
         devinette: "Qu’est-ce qui entre par une oreille, qui ressort par l’autre mais reste en tête ?",
         reponse: "– Une pioche !",
+        date_created: new Date(),
 
         sub_category_id: 4,
     },
@@ -51,6 +55,7 @@ let CONTENT: Content[] = [
         blague: null,
         devinette: "Melon Melaiche sont en cours d'histoire",
         reponse: "Melon étudie Rome et Melèche la Gaule.",
+        date_created: new Date(),
 
         sub_category_id: 5,
     },
