@@ -1,12 +1,21 @@
 import { useParams } from "react-router-dom";
 import { getCategorySlug } from "../data/Category.ts";
 
+function Reveal() {
+  var x = document.getElementById("devinette");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 function CardContent() {
   let { slug } = useParams();
 
   let categ = getCategorySlug(slug);
 
-  if (categ.video === true) {
+  if (categ.video) {
     return (
       <div className="col">
         <div className="card shadow-sm">
@@ -33,16 +42,21 @@ function CardContent() {
         </div>
       </div>
     );
-  } else if (categ.audio === true) {
+  } else if (categ.audio) {
     return (
       <div className="col">
         <div className="card shadow-sm">
           <div className="card-header">
-            <h5 className="card-title text-center">Choum Best of Etienne Daho</h5>
+            <h5 className="card-title text-center">
+              Choum Best of Etienne Daho
+            </h5>
           </div>
           <div className="card-body text-center">
             <figure>
-              <audio controls src="https://www.coolspot.fr/sons/Choum---Best-of-Etienne-Daho.mp3">
+              <audio
+                controls
+                src="https://www.coolspot.fr/sons/Choum---Best-of-Etienne-Daho.mp3"
+              >
                 Your browser does not support the
                 <code>audio</code> element.
               </audio>
@@ -62,7 +76,7 @@ function CardContent() {
         </div>
       </div>
     );
-  } else if (categ.picture === true) {
+  } else if (categ.picture) {
     return (
       <div className="col">
         <div className="card shadow-sm">
@@ -93,6 +107,35 @@ function CardContent() {
                   Voir
                 </button>
               </div>
+              <small className="text-muted">25/02/22</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else if (categ.devinette) {
+    return (
+      <div className="col">
+        <div className="card shadow-sm">
+          <div className="card-header">
+            <h5 className="card-title text-center">Qui suis-je ? N°1</h5>
+          </div>
+          <div className="card-body">
+            <p className="card-text text-center">
+              Je suis plus haut que le plus haut,
+              <br />
+              Je suis plus bas que le plus bas,
+              <br />
+              Je suis plus droit que le plus droit,
+              <br />
+              Je suis plus gauche que le plus gauche.
+            </p>
+            <div className="d-flex justify-content-center align-items-center">
+              <button className="btn btn-primary">
+                Reponse
+              </button>
+            </div>
+            <div className="d-flex justify-content-between align-items-center">
               <small className="text-muted">25/02/22</small>
             </div>
           </div>

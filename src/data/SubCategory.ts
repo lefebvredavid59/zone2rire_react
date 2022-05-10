@@ -39,8 +39,8 @@ let SUBCATEGORY: SubCategory[] = [
     },
     {
         id: 5,
-        name: "Melon Melaiche",
-        slug: "devinette-melon-melaiche",
+        name: "Qui suis-je?",
+        slug: "qui-suis-je",
 
         category_id: 5,
     },
