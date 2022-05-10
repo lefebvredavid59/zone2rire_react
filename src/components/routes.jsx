@@ -12,7 +12,7 @@ import Register from "../pages/auth/Register";
 
 import Footer from "./Footer/Footer";
 import Navbar from "./Navbar/Navbar";
-import Category from "../pages/content/Category";
+import Content from "../pages/content/Content";
 
 const index = () => {
     return (
@@ -23,7 +23,8 @@ const index = () => {
                     <Route path="/" exact element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
-                    <Route path="/:slug" element={<Category />} />
+                    <Route path="/:slug" element={<Content />} />
+                    <Route path="/:slug/:slug" element={<Content />} />
 
                     <Route path="*" element={<NoMatch />} />
                 </Routes>

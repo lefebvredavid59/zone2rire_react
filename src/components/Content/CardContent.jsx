@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { getCategorySlug } from "../data/Category.ts";
-import {Answer} from "../styles/CardContent";
+import { getCategorySlug } from "../../data/Category.ts";
+import { Answer } from "../../styles/CardContent";
 
 function CardContent() {
   let { slug } = useParams();
-
   let categ = getCategorySlug(slug);
+
 
   if (categ.video) {
     return (
@@ -122,9 +122,8 @@ function CardContent() {
               <br />
               Je suis plus gauche que le plus gauche.
             </p>
-            <Answer>
-                Reponse
-            </Answer>
+
+            <Answer reponse></Answer>
             <div className="d-flex justify-content-between align-items-center">
               <small className="text-muted">25/02/22</small>
             </div>
