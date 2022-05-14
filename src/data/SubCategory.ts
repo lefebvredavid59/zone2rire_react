@@ -54,9 +54,11 @@ let SUBCATEGORY: SubCategory[] = [
 ];
 
 function getSubCategoryByCategoryId(categoryId: number): SubCategory[] {
-
     return SUBCATEGORY.filter(subCategory => subCategory.category_id === categoryId ? subCategory : null);
-
 };
 
-export { SUBCATEGORY, getSubCategoryByCategoryId };
+function getSubCategoryBySlug(slug: string): SubCategory {
+    return SUBCATEGORY.find(subCategory => subCategory.slug === slug ? subCategory : null);
+}
+
+export { SUBCATEGORY, getSubCategoryByCategoryId, getSubCategoryBySlug };

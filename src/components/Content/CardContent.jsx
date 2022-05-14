@@ -6,7 +6,6 @@ function CardContent() {
   let { slug } = useParams();
   let categ = getCategorySlug(slug);
 
-
   if (categ.video) {
     return (
       <div className="col">

@@ -25,7 +25,7 @@ function HeaderContent() {
           <p className="d-flex justify-content-around">
             {getSubCategoryByCategoryId(categ.id).map((subcateg) => (
               <Link
-                to="/"
+              to={`/${categ.slug}/${subcateg.slug}`}
                 className="badge rounded-pill bg-primary position-relative mt-2 text-decoration-none text-white"
               >
                 {subcateg.name}

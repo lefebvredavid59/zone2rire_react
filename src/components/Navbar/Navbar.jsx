@@ -53,10 +53,10 @@ function Navbar() {
             })}
 
             <li className="nav-item">
-              <a href="/" className="nav-link text-dark">
+              <Link to="/addcontent" className="nav-link text-dark">
                 <i className="fa-solid fa-file-circle-plus fa-shake me-2"></i>
                 Proposer un contenu
-              </a>
+              </Link>
             </li>
           </ul>
 

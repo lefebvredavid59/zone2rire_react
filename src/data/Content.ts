@@ -70,8 +70,8 @@ function countContentBySubCategoryId(subCategoryId: number): number {
     return CONTENT.filter(content => content.sub_category_id === subCategoryId).length;
 }
 
-function filterBySubCategoryId(subCategoryId: number): Content[] {
+function getContentBySubCategoryId(subCategoryId: number): Content[] {
     return CONTENT.filter(content => content.sub_category_id === subCategoryId);
 }
 
-export { CONTENT, countContentBySubCategoryId, filterBySubCategoryId };
+export { CONTENT, countContentBySubCategoryId, getContentBySubCategoryId };
