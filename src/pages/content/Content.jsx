@@ -27,7 +27,8 @@ function Content() {
       </Helmet>
 
       <main>
-        <HeaderContent />
+        <HeaderContent 
+        title={name}/>
  
         <div className="album py-5 bg-light">
           <div className="container">

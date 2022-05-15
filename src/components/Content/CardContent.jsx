@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
 import { getCategorySlug } from "../../data/Category.ts";
 import { Answer } from "../../styles/CardContent";
+import { findContentByCategoryId } from "../../data/Content.ts";
 
 function CardContent() {
   let { slug } = useParams();
   let categ = getCategorySlug(slug);
+
+  let content = findContentByCategoryId(categ.id);
 
   if (categ.video) {
     return (
@@ -38,30 +41,17 @@ function CardContent() {
       <div className="col">
         <div className="card shadow-sm">
           <div className="card-header">
-            <h5 className="card-title text-center">
-              Choum Best of Etienne Daho
-            </h5>
+            <h5 className="card-title text-center">{content.name}</h5>
           </div>
           <div className="card-body text-center">
             <figure>
-              <audio
-                controls
-                src="https://www.coolspot.fr/sons/Choum---Best-of-Etienne-Daho.mp3"
-              >
-                Your browser does not support the
-                <code>audio</code> element.
+              <audio controls src='http://zone2rire.free.fr/MP3Choum/Choum%20-%20Chanter%20Plus%20Faux.mp3'>
+              Votre navigateur ne supporte pas l'élément
+                <code>audio</code>.
               </audio>
             </figure>
             <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-secondary"
-                >
-                  Voir
-                </button>
-              </div>
-              <small className="text-muted">9 mins</small>
+              <small className="text-muted">{content.date_created}</small>
             </div>
           </div>
         </div>
@@ -109,20 +99,14 @@ function CardContent() {
       <div className="col">
         <div className="card shadow-sm">
           <div className="card-header">
-            <h5 className="card-title text-center">Qui suis-je ? N°1</h5>
+            <h5 className="card-title text-center">{content.name}</h5>
           </div>
           <div className="card-body">
             <p className="card-text text-center">
-              Je suis plus haut que le plus haut,
-              <br />
-              Je suis plus bas que le plus bas,
-              <br />
-              Je suis plus droit que le plus droit,
-              <br />
-              Je suis plus gauche que le plus gauche.
+              {content.devinette}
             </p>
 
-            <Answer reponse></Answer>
+            <Answer>{content.reponse}</Answer>
             <div className="d-flex justify-content-between align-items-center">
               <small className="text-muted">25/02/22</small>
             </div>

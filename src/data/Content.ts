@@ -48,9 +48,9 @@ let CONTENT: Content[] = [
     },
     {
         id: 4,
-        name: "Choum Best of Etienne Daho",
-        slug: "choum-best-of-etienne-daho",
-        audio_link: "https://www.coolspot.fr/sons/Choum---Best-of-Etienne-Daho.mp3",
+        name: "Choum chanter plus faux",
+        slug: "choum-chanter-plus-faux",
+        audio_link: "http://zone2rire.free.fr/MP3Choum/Choum%20-%20Chanter%20Plus%20Faux.mp3",
         date_created: new Date(),
 
         sub_category_id: 3,
@@ -66,12 +66,19 @@ let CONTENT: Content[] = [
     }
 ];
 
+// Compte le nombre d'article dans la SousCategorie
 function countContentBySubCategoryId(subCategoryId: number): number {
     return CONTENT.filter(content => content.sub_category_id === subCategoryId).length;
 }
 
+// Recherche les article selon la sous catégorie
 function getContentBySubCategoryId(subCategoryId: number): Content[] {
     return CONTENT.filter(content => content.sub_category_id === subCategoryId);
 }
 
-export { CONTENT, countContentBySubCategoryId, getContentBySubCategoryId };
+// Recherche un article selon la catégorie
+function findContentByCategoryId(categoryId: number): Content[] {
+    return CONTENT.filter(content => content.sub_category_id.category_id === categoryId);
+}
+
+export { CONTENT, countContentBySubCategoryId, getContentBySubCategoryId, findContentByCategoryId };

@@ -5,21 +5,21 @@ import { countContentBySubCategoryId } from "../../data/Content.ts";
 import { getCategorySlug } from "../../data/Category.ts";
 
 
-function HeaderContent() {
+function HeaderContent(props) {
+
   let { slug } = useParams();
 
   let categ = getCategorySlug(slug);
 
-  let logo = `${categ.logo}`;
-  let name = `${categ.name}`;
 
+  let logo = `${categ.logo}`;
 
   return (
     <section className="py-3 text-center container">
       <div className="row py-lg-3">
         <div className="col-lg-6 col-md-8 mx-auto">
           <h1 className="fw-light">
-            <i className={`me-2 ${logo}`}></i> {name}
+            <i className={`me-2 ${logo}`}></i> {props.title}
           </h1>
           <p className="my-2">Catégorie disponible :</p>
           <p className="d-flex justify-content-around">
