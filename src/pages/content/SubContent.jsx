@@ -8,22 +8,26 @@ import Helmet from "react-helmet";
 import CardContent from "../../components/Content/CardContent";
 import HeaderContent from "../../components/Content/HeaderContent";
 
+import { getContentBySubCategoryId } from "../../data/Content.ts";
+
 function SubContent() {
-  let { slug, subslug } = useParams();
+
+  const { slug, subslug } = useParams();
+
+  const categ = getCategorySlug(slug);
+
+  const subcat = getSubCategoryBySlug(subslug);
+
+  const name = `${categ.name} ${subcat.name}`;
+
 
   if (!subslug) {
     return <NoMatch />;
   }
 
-  let categ = getCategorySlug(slug);
-
-  let subcat = getSubCategoryBySlug(subslug);
-
   if (!subcat) {
     return <NoMatch />;
   }
-
-  let name = `${categ.name} ${subcat.name}`;
 
   return (
     <div>
@@ -37,7 +41,21 @@ function SubContent() {
         <div className="album py-5 bg-light">
           <div className="container">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 justify-content-center">
-              <CardContent />
+            
+            {getContentBySubCategoryId(subcat.id).map((content) => (
+                <CardContent
+                key={content.id}
+                  name={content.name}
+                  slug={content.slug}
+                  picture={content.picture}
+                  video={content.video_link}
+                  audio={content.audio_link}
+                  blague={content.blague}
+                  devinette={content.devinette}
+                  reponse={content.reponse}
+                  date={content.date_created}
+                />
+              ))}
             </div>
           </div>
         </div>

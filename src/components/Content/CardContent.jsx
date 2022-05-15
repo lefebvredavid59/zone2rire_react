@@ -1,36 +1,29 @@
 import { useParams } from "react-router-dom";
 import { getCategorySlug } from "../../data/Category.ts";
 import { Answer } from "../../styles/CardContent";
-import { findContentByCategoryId } from "../../data/Content.ts";
 
-function CardContent() {
+function CardContent(props) {
   let { slug } = useParams();
   let categ = getCategorySlug(slug);
 
-  let content = findContentByCategoryId(categ.id);
 
   if (categ.video) {
     return (
       <div className="col">
         <div className="card shadow-sm">
+        <div className="card-header">
+            <h5 className="card-title text-center">{props.name}</h5>
+          </div>
           <div class="ratio ratio-16x9">
             <iframe
-              src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+              src={props.video}
               title="YouTube video"
               allowfullscreen
             ></iframe>
           </div>
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
-              <div className="btn-group">
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-secondary"
-                >
-                  Voir
-                </button>
-              </div>
-              <small className="text-muted">9 mins</small>
+              <small className="text-muted">{props.date.getFullYear()}</small>
             </div>
           </div>
         </div>
@@ -41,17 +34,17 @@ function CardContent() {
       <div className="col">
         <div className="card shadow-sm">
           <div className="card-header">
-            <h5 className="card-title text-center">{content.name}</h5>
+            <h5 className="card-title text-center">{props.name}</h5>
           </div>
           <div className="card-body text-center">
             <figure>
-              <audio controls src='http://zone2rire.free.fr/MP3Choum/Choum%20-%20Chanter%20Plus%20Faux.mp3'>
+              <audio controls src={props.audio}>
               Votre navigateur ne supporte pas l'élément
                 <code>audio</code>.
               </audio>
             </figure>
             <div className="d-flex justify-content-between align-items-center">
-              <small className="text-muted">{content.date_created}</small>
+              <small className="text-muted">{props.date.getFullYear()}</small>
             </div>
           </div>
         </div>
@@ -61,34 +54,12 @@ function CardContent() {
     return (
       <div className="col">
         <div className="card shadow-sm">
-          <svg
-            className="bd-placeholder-img card-img-top"
-            width="100%"
-            height="225"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: Thumbnail"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c" />
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-              Thumbnail
-            </text>
-          </svg>
+          <img className="bd-placeholder-img card-img-top" 
+          src={props.picture} alt={`/${props.name}`} />
 
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
-              <div className="btn-group">
-                <button
-                  type="button"
-                  className="btn btn-sm btn-outline-secondary"
-                >
-                  Voir
-                </button>
-              </div>
-              <small className="text-muted">25/02/22</small>
+              <small className="text-muted">{props.date.getFullYear()}</small>
             </div>
           </div>
         </div>
@@ -99,16 +70,16 @@ function CardContent() {
       <div className="col">
         <div className="card shadow-sm">
           <div className="card-header">
-            <h5 className="card-title text-center">{content.name}</h5>
+            <h5 className="card-title text-center">{props.name}</h5>
           </div>
           <div className="card-body">
             <p className="card-text text-center">
-              {content.devinette}
+              {props.devinette}
             </p>
 
-            <Answer>{content.reponse}</Answer>
+            <Answer props={props.reponse} />
             <div className="d-flex justify-content-between align-items-center">
-              <small className="text-muted">25/02/22</small>
+              <small className="text-muted">{props.date.getFullYear()}</small>
             </div>
           </div>
         </div>

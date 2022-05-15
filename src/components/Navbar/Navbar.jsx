@@ -43,7 +43,7 @@ function Navbar() {
 
             {categ.map((cat) => {
               return (
-                <li className="nav-item">
+                <li key={cat.id} className="nav-item">
                   <Link to={`/${cat.slug}`} className="nav-link text-dark">
                     <i className={`me-2 ${cat.logo}`}></i>
                     {cat.name}

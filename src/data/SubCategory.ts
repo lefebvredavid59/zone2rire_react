@@ -61,4 +61,5 @@ function getSubCategoryBySlug(slug: string): SubCategory {
     return SUBCATEGORY.find(subCategory => subCategory.slug === slug ? subCategory : null);
 }
 
+
 export { SUBCATEGORY, getSubCategoryByCategoryId, getSubCategoryBySlug };

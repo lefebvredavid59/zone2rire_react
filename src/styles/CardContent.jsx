@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Answer = styled.div`
+export const Answer= styled.div`
   text-align: center;
   :after {
     font-size: 30px;

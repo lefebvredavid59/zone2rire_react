@@ -50,7 +50,7 @@ let CONTENT: Content[] = [
         id: 4,
         name: "Choum chanter plus faux",
         slug: "choum-chanter-plus-faux",
-        audio_link: "http://zone2rire.free.fr/MP3Choum/Choum%20-%20Chanter%20Plus%20Faux.mp3",
+        audio_link: "http://zone2rire.free.fr/MP3Choum/Zone2Rire_Choum_Chanter_Plus_Faux.mp3",
         date_created: new Date(),
 
         sub_category_id: 3,

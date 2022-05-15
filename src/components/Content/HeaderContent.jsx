@@ -24,7 +24,7 @@ function HeaderContent(props) {
           <p className="my-2">Catégorie disponible :</p>
           <p className="d-flex justify-content-around">
             {getSubCategoryByCategoryId(categ.id).map((subcateg) => (
-              <Link
+              <Link key={categ.id + subcateg.id}
               to={`/${categ.slug}/${subcateg.slug}`}
                 className="badge rounded-pill bg-primary position-relative mt-2 text-decoration-none text-white"
               >
