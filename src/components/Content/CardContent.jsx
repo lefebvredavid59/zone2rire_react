@@ -6,18 +6,19 @@ function CardContent(props) {
   let { slug } = useParams();
   let categ = getCategorySlug(slug);
 
-
   if (categ.video) {
     return (
       <div className="col">
         <div className="card shadow-sm">
-        <div className="card-header">
+          <div className="card-header">
             <h5 className="card-title text-center">{props.name}</h5>
           </div>
           <div class="ratio ratio-16x9">
             <iframe
               src={props.video}
-              title="YouTube video"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
@@ -39,7 +40,7 @@ function CardContent(props) {
           <div className="card-body text-center">
             <figure>
               <audio controls src={props.audio}>
-              Votre navigateur ne supporte pas l'élément
+                Votre navigateur ne supporte pas l'élément
                 <code>audio</code>.
               </audio>
             </figure>
@@ -54,8 +55,11 @@ function CardContent(props) {
     return (
       <div className="col">
         <div className="card shadow-sm">
-          <img className="bd-placeholder-img card-img-top" 
-          src={props.picture} alt={`/${props.name}`} />
+          <img
+            className="bd-placeholder-img card-img-top"
+            src={props.picture}
+            alt={`/${props.name}`}
+          />
 
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center">
@@ -73,11 +77,9 @@ function CardContent(props) {
             <h5 className="card-title text-center">{props.name}</h5>
           </div>
           <div className="card-body">
-            <p className="card-text text-center">
-              {props.devinette}
-            </p>
+            <p className="card-text text-center">{props.devinette}</p>
 
-            <Answer props={props.reponse} />
+            <Answer content={props} />
             <div className="d-flex justify-content-between align-items-center">
               <small className="text-muted">{props.date.getFullYear()}</small>
             </div>

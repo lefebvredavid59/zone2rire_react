@@ -48,7 +48,7 @@ let CONTENT: Content[] = [
     },
     {
         id: 4,
-        name: "Choum chanter plus faux",
+        name: "Choum : chanter plus faux",
         slug: "choum-chanter-plus-faux",
         audio_link: "http://zone2rire.free.fr/MP3Choum/Zone2Rire_Choum_Chanter_Plus_Faux.mp3",
         date_created: new Date(),
@@ -63,7 +63,34 @@ let CONTENT: Content[] = [
         date_created: new Date(),
 
         sub_category_id: 6,
-    }
+    },
+    {
+        id: 6,
+        name: "Choum : Désenchanter",
+        slug: "choum-désenchanter",
+        audio_link: "http://zone2rire.free.fr/MP3Choum/Zone2Rire_Choum_Desenchante.mp3",
+        date_created: new Date(),
+
+        sub_category_id: 3,
+    },
+    {
+        id: 7,
+        name: "Tu fais quoi ?",
+        slug: "tu-fais-quoi",
+        picture: "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.6435-9/210359797_3061632994081957_8857232218075953268_n.jpg?_nc_cat=105&ccb=1-6&_nc_sid=8bfeb9&_nc_ohc=w-3MS019ZH8AX-Y2dMg&_nc_ht=scontent-cdt1-1.xx&oh=00_AT-lB7YcIgn4NQL_9Nf9ZZIa8oNQR0fY1WDuO1HbWUW6KQ&oe=62A5598E",
+        date_created: new Date(),
+
+        sub_category_id: 7,
+    },
+    {
+        id: 8,
+        name: "Nos amis les animaux",
+        slug: "nos-amis-les-animaux",
+        video_link: "https://www.youtube.com/embed/F7YBrwoQZE8",
+        date_created: new Date(),
+
+        sub_category_id: 2,
+    },
 ];
 
 // Compte le nombre d'article dans la SousCategorie

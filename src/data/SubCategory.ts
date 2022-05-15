@@ -18,8 +18,8 @@ let SUBCATEGORY: SubCategory[] = [
     },
     {
         id: 2,
-        name: "TikTok",
-        slug: "tiktok",
+        name: "Animaux",
+        slug: "animaux",
 
         category_id: 2,
     },
@@ -51,6 +51,13 @@ let SUBCATEGORY: SubCategory[] = [
 
         category_id: 3,
     },
+    {
+        id: 7,
+        name: "Méme",
+        slug: "meme",
+
+        category_id: 4,
+    }
 ];
 
 function getSubCategoryByCategoryId(categoryId: number): SubCategory[] {
